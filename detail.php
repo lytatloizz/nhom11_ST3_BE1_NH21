@@ -372,7 +372,7 @@
 
 					<div class="col-md-12">
 						<div class="section-title text-center">
-							<h3 class="title">Related Products</h3>
+							<h3 class="title">Related Manufacture</h3>
 						</div>
 					</div>
 					<?php 
@@ -391,7 +391,7 @@
 							</div>
 							<div class="product-body">
 								<p class="product-category">Category</p>
-								<h3 class="product-name"><a href="#"><?php echo $value['name'] ?></a></h3>
+								<h3 class="product-name"><a href="detail.php?id=<?php echo $value['id']?>"><?php echo $value['name'] ?></a></h3>
 								<h4 class="product-price"><?php echo number_format($value['price'])  ?>VND <del class="product-old-price"><?php echo number_format( $value['price'] )?>VND</del></h4>
 								<div class="product-rating">
 								</div>

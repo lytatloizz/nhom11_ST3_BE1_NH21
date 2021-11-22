@@ -6,6 +6,59 @@
 			<div class="container">
 				<!-- row -->
 				<div class="row">
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/shop01.png" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Laptop<br>Collection</h3>
+								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/shop03.png" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Accessories<br>Collection</h3>
+								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/shop02.png" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Cameras<br>Collection</h3>
+								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION --
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
 
 					<!-- section title -->
 					<div class="col-md-12">
@@ -42,7 +95,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Category</p>
-												<h3 class="product-name"><a href="#"><?php echo $value['name'] ?></a></h3>
+												<h3 class="product-name"><a href="detail.php?id=<?php echo $value['id'] ?>"><?php echo $value['name'] ?></a></h3>
 												<h4 class="product-price">$980.00 <del class="product-old-price"><?php echo $value['price'] ?></del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>

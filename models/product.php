@@ -29,8 +29,8 @@ class Product extends Db
     }
     public function getProductById($id)
     {
-        $sql = self::$connection->prepare("SELECT* FROM product WHERE id = ?");
-        $sql->bind_param("i",$id);
+        $sql = self::$connection->prepare("SELECT* FROM products WHERE id = ?");
+        $sql->bind_param("i", $id);
         $sql->execute(); //return an object
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -52,6 +52,17 @@ class Product extends Db
         $sql = self::$connection->prepare("SELECT * FROM products
         WHERE manu_id = ? LIMIT ?, ?");
         $sql->bind_param("iii", $manu_id, $firstLink, $perPage);
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
+    public function get2ProductByManuId($manu_id, $limit)
+    {
+        // Tính số thứ tự trang bắt đầu
+        $sql = self::$connection->prepare("SELECT * FROM products
+        WHERE manu_id = ? LIMIT 0, ?");
+        $sql->bind_param("ii", $manu_id, $limit);
         $sql->execute(); //return an object
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);

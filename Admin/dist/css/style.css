@@ -1,0 +1,37 @@
+.custom-file-upload-hidden {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+}
+.custom-file-upload {
+    display: block;
+    width: auto;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    
+}
+
+.file-upload-wrapper {
+    position: relative; 
+    border: 1px solid #ccc;
+}
+.file-upload-input {
+    color: black;
+    font-size: 16px;
+    padding: 2.3% 15%; 
+    border: none;
+    background-color: #fff; 
+    
+}
+.file-upload-button {
+    cursor: pointer; 
+    display: inline-block; 
+    color: blue;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 2.3% 7.2%; 
+    border: none;
+    background-color: darken(black, 10); 
+    
+}

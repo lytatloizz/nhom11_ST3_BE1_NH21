@@ -222,7 +222,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="./index.php" class="nav-link active">
+            <a href="index.php" class="nav-link active">
               <i class="nav-icon fas fa-database"></i>
               <p>
                 Dashboard
@@ -230,28 +230,28 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="products.php" target="_bank" class="nav-link">
+            <a href="products.php" class="nav-link">
               <i class="nav-icon fab fa-r-project"></i>
               <p>
-                Projects
+              Products
               </p>
               <i class="fas fa-cog"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="products-add.php" class="nav-link">
               <i class="nav-icon fab fa-r-project"></i>
               <p>
-               Project add
+              Products add
               </p>
               <i class="fas fa-plus"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="products-edit.php" class="nav-link">
               <i class="nav-icon fab fa-r-project"></i>
               <p>
-               Project edit
+              Products edit
                <i class="far fa-edit"></i>
               </p>
             </a>

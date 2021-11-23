@@ -79,12 +79,12 @@
                       <td class="project-state"> <?php echo $value['manu_name'] ?> </td>
                       <td class="project-state"> <?php echo $value['type_name'] ?> </td>
                       <td class="project-actions text-right"> 
-                          <a class="btn btn-info btn-sm" href="#" >
+                          <a class="btn btn-info btn-sm" href="products-edit.php" >
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <a class="btn btn-danger btn-sm" href="products-delete.php?id=<?php echo $value['id'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

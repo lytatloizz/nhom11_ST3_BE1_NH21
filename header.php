@@ -33,7 +33,7 @@ $getAllmanu = $manu->getAllManu();
 
 		<!-- Font Awesome Icon -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
-
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 		<!-- Custom stlylesheet -->
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

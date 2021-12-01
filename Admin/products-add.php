@@ -42,7 +42,6 @@
                 <div class="custom-file-upload">
                   <input type="file" id="file" class="form-control" name="Image"> 
                 </div>
-                
               </div>
               <div class="form-group">
                 <label for="inputClientCompany">Products Price</label>

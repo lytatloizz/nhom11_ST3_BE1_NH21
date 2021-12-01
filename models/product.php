@@ -82,6 +82,7 @@ class Product extends Db
     {
         $sql = self::$connection->prepare("SELECT * FROM products WHERE `name` LIKE ? LIMIT ?, ?");
         $keyword = "%$keyword%";
+        $firstLink = ($page - 1) * $perPage;
         $sql->bind_param("sii", $keyword, $firstLink, $perPage);
         $sql->execute(); //return an object
         $items = array();

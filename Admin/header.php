@@ -255,13 +255,7 @@
                   <i class="fas fa-plus"></i>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="products-edit.php" class="nav-link">
-                <i class="nav-icon fab fa-product-hunt"></i>
-                  <p>Products edit</p>
-                  <i class="far fa-edit"></i>
-                </a>
-              </li>
+              
             </ul>
           </li>
             <li class="nav-item menu-close">
@@ -286,13 +280,7 @@
                   <i class="fas fa-plus"></i>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="products-edit.php" class="nav-link">
-                <i class="nav-icon fas fa-industry"></i>
-                  <p>Manufacture edit</p>
-                  <i class="far fa-edit"></i>
-                </a>
-              </li>
+              
             </ul>
           </li>
           <li class="nav-item menu-close">
@@ -317,13 +305,7 @@
                   <i class="fas fa-plus"></i>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="protype-edit.php" class="nav-link">
-                <i class="nav-icon fab fas fa-tape"></i>
-                  <p>Protype edit</p>
-                  <i class="far fa-edit"></i>
-                </a>
-              </li>
+             
             </ul>
           </li>
         </ul>

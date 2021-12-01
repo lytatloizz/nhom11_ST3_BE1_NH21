@@ -33,7 +33,8 @@ class Product extends Db
     }
     public function getProductById($id)
     {
-        $sql = self::$connection->prepare("SELECT* FROM products WHERE id = ?");
+        $sql = self::$connection->prepare("SELECT* FROM products,manufactures,protypes WHERE products.manu_id = manufactures.manu_id
+        AND products.type_id = protypes.type_id AND id = ?");
         $sql->bind_param("i",$id);
         $sql->execute(); //return an object
         $items = array();
@@ -103,4 +104,5 @@ class Product extends Db
         $sql->bind_param("siiissii", $name,$manu_id,$type_id,$price,$image,$description,$feature,$id);
         return $sql->execute();
     }
+    
 }

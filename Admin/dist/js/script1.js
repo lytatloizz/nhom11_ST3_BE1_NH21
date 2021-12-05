@@ -7,8 +7,5 @@ let price = document.querySelector('#inputPrice');
 let protypes = document.querySelector('#inputprotypes');
 let feature = document.querySelector('#inputfeature');
 let click = document.querySelector('.click');
-
-image.onclick = () =>
-{
-    image.setAttribute("type","file");
-}
+let img = document.getElementById("anh");
+let btnImg = document.querySelector('.file-upload-button');

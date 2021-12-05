@@ -59,7 +59,7 @@
                       <td> <?php echo $value['type_id'] ?> </td>
                       <td > <?php echo $value['type_name'] ?> </td>
                       <td class="project-actions text-right"> 
-                          <a class="btn btn-info btn-sm" href="products-edit.php" >
+                          <a class="btn btn-info btn-sm" href="protype-edit.php?id=<?php echo $value['type_id']?>" >
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit

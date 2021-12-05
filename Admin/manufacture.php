@@ -59,7 +59,7 @@
                       <td> <?php echo $value['manu_id'] ?> </td>
                       <td > <?php echo $value['manu_name'] ?> </td>
                       <td class="project-actions text-right"> 
-                          <a class="btn btn-info btn-sm" href="products-edit.php" >
+                          <a class="btn btn-info btn-sm" href="manufacture-edit.php?id=<?php echo $value['manu_id'] ?>" >
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit

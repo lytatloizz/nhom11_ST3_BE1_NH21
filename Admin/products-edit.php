@@ -48,13 +48,14 @@
               <div class="form-group">
                 <label for="inputStatus">Products Image</label>
                 <div class="custom-file-upload">
-                <input type="text" id="img" class="form-control" value="<?php echo $value['image'] ?>" name="Image">
+                  <input type="text" id="img" class="form-control" value="<?php echo $value['image'] ?>" name="Image">
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputClientCompany">Products Description</label>
                 <textarea id="inputDescription" class="form-control" rows="4" name="description"><?php echo $value['description'] ?></textarea>
               </div>
+            </div>
             </div>
             <!-- /.card-body -->
           </div>

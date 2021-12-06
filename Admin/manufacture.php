@@ -24,7 +24,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Products</h3>
+          <h3 class="card-title">Manufacture</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -45,46 +45,26 @@
                       <th >
                           name
                       </th>
-                      <th>
-                          image
-                      </th>
-                      <th>
-                          price
-                      </th>
-                      <th>
-                          description	
-                      </th>
-                      <th class="text-center">
-                          manufactures
-                      </th>
-                      <th >
-                      protypes
-                      </th>
-                      <th style="text-align: center;">
+                      <th style="text-align: right;">
                           Action
                       </th>
                   </tr>
               </thead>
               <tbody>
               <?php 
-                $getAllProducts = $products->getAllProducts();
-                foreach($getAllProducts as $value): 
+                $getAllManu = $manufacture->getAllManu();
+                foreach($getAllManu as $value): 
               ?>
                   <tr>    
-                      <td> <?php echo $value['id'] ?> </td>
-                      <td > <?php echo $value['name'] ?> </td>
-                      <td> <img style="width: 100%" src="../img/<?php echo $value['image']?>" alt=""> </td>
-                      <td class="project_progress"> <?php echo number_format($value['price'])  ?> VND </td>
-                      <td class="project_progress"> <?php echo $value['description'] ?> </td>
-                      <td class="project-state"> <?php echo $value['manu_name'] ?> </td>
-                      <td class="project-state"> <?php echo $value['type_name'] ?> </td>
+                      <td> <?php echo $value['manu_id'] ?> </td>
+                      <td > <?php echo $value['manu_name'] ?> </td>
                       <td class="project-actions text-right"> 
-                          <a class="btn btn-info btn-sm" href="products-edit.php?id=<?php echo $value['id']?>">
+                          <a class="btn btn-info btn-sm" href="manufacture-edit.php?id=<?php echo $value['manu_id'] ?>" >
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="products-delete.php?id=<?php echo $value['id'] ?>">
+                          <a class="btn btn-danger btn-sm" href="manufacture-delete.php?manu_id=<?php echo $value['manu_id'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

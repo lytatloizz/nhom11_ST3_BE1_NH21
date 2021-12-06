@@ -222,39 +222,91 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="./index.php" class="nav-link active">
+            <a href="index.php" class="nav-link">
               <i class="nav-icon fas fa-database"></i>
               <p>
                 Dashboard
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="products.php" target="_bank" class="nav-link">
-              <i class="nav-icon fab fa-r-project"></i>
-              <p>
-                Projects
-              </p>
-              <i class="fas fa-cog"></i>
-            </a>
-          </li>
-          <li class="nav-item">
+        </ul>
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item menu-close">
             <a href="#" class="nav-link">
-              <i class="nav-icon fab fa-r-project"></i>
+            <i class="nav-icon fab fa-product-hunt"></i>
               <p>
-               Project add
+                Products
+                <i class="fas fa-angle-left right"></i>
               </p>
-              <i class="fas fa-plus"></i>
             </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="products.php" class="nav-link active">
+                <i class="nav-icon fab fa-product-hunt"></i>
+                  <p>Show All Products</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="products-add.php" class="nav-link">
+                <i class="nav-icon fab fa-product-hunt"></i>
+                  <p>Products add</p>
+                  <i class="fas fa-plus"></i>
+                </a>
+              </li>
+              
+            </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fab fa-r-project"></i>
+            <li class="nav-item menu-close">
+            <a href="#" class="nav-link ">
+            <i class="nav-icon fas fa-industry"></i>
               <p>
-               Project edit
-               <i class="far fa-edit"></i>
+                Manufacture
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="manufacture.php" class="nav-link active">
+                <i class="nav-icon fas fa-industry"></i>
+                  <p>Show All Manufacture</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="manufacture-add.php" class="nav-link">
+                <i class="nav-icon fas fa-industry"></i>
+                  <p>Manufacture add</p>
+                  <i class="fas fa-plus"></i>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+          <li class="nav-item menu-close">
+            <a href="#" class="nav-link ">
+            <i class="nav-icon fab fas fa-tape"></i>
+              <p>
+                Protype
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="protype.php" class="nav-link active">
+                <i class="nav-icon fab fas fa-tape"></i>
+                  <p>Show All Protype</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="protype-add.php" class="nav-link">
+                <i class="nav-icon fab fas fa-tape"></i>
+                  <p>Protype add</p>
+                  <i class="fas fa-plus"></i>
+                </a>
+              </li>
+             
+            </ul>
           </li>
         </ul>
       </nav>

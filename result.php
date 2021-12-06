@@ -275,9 +275,10 @@
 
 						<!-- store bottom filter -->
 						<div class="store-filter clearfix">
-							<span class="store-qty">Showing 20-100 products</span>
+							<span class="store-qty"></span>
 							<ul class="store-pagination">
 								<?php echo $product->paginate($url, $total, $perPage); ?>
+								
 							</ul>
 						</div>
 						<!-- /store bottom filter -->

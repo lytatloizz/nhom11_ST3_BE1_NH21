@@ -9,6 +9,14 @@ class Product extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array
     }
+    public function getRamdomProducts()
+    {
+        $sql = self::$connection->prepare("SELECT * FROM products ORDER BY RAND()");
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
     public function getTenProducts()
     {
         $sql = self::$connection->prepare("SELECT * FROM `products` WHERE id LIMIT 10");
@@ -31,6 +39,15 @@ class Product extends Db
     {
         $sql = self::$connection->prepare("SELECT* FROM products WHERE id = ?");
         $sql->bind_param("i", $id);
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
+    public function getProductByFeature($feature)
+    {
+        $sql = self::$connection->prepare("SELECT* FROM products WHERE feature = ?");
+        $sql->bind_param("i", $feature);
         $sql->execute(); //return an object
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -82,6 +99,7 @@ class Product extends Db
     {
         $sql = self::$connection->prepare("SELECT * FROM products WHERE `name` LIKE ? LIMIT ?, ?");
         $keyword = "%$keyword%";
+        $firstLink = ($page - 1) * $perPage;
         $sql->bind_param("sii", $keyword, $firstLink, $perPage);
         $sql->execute(); //return an object
         $items = array();

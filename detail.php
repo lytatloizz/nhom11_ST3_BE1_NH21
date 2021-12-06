@@ -73,52 +73,30 @@
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star-o"></i>
 								</div>
-								<a class="review-link" href="#">10 Review(s) | Add your review</a>
+								<a class="review-link">10 Review(s)</a>
 							</div>
 							<div>
-								<h3 class="product-price"><?php echo number_format($value['price'])  ?>VND <del class="product-old-price"><?php echo number_format( $value['price'] )?>VND</del></h3>
-								<span class="product-available">In Stock</span>
+								<h3 class="product-price" ><?php echo number_format($value['price'])  ?>VND <del class="product-old-price"><?php echo number_format( $value['price'] )?>VND</del></h3>
 							</div>
 								<p><?php echo $value['description'] ?></p>
-							<div class="product-options">
-								<label>
-									Size
-									<select class="input-select">
-										<option value="0">X</option>
-										<option value="0">L</option>
-										<option value="0">M</option>
-									</select>
-								</label>
-								<label>
-									Color
-									<select class="input-select">
-										<option value="0">Red</option>
-									</select>
-								</label>
-							</div>
-
-							<div class="add-to-cart">
-								<div class="qty-label">
-									Qty
-									<div class="input-number">
-										<input type="number">
-										<span class="qty-up">+</span>
-										<span class="qty-down">-</span>
+							<form action="add-cart.php" method="post">
+								<div class="add-to-cart">
+									<div class="qty-label">
+										Qty
+										<div class="input-number">
+											<input type="number" value="1" name="soluong">
+											<span class="qty-up">+</span>
+											<span class="qty-down">-</span>
+										</div>
 									</div>
+									<input type="submit" name="submit" class="add-to-cart-btn" value="add to cart">
+									<input type="hidden" name="idsp" value="<?php echo $value['id'] ?>">
+									<input type="hidden" name="tensp" value="<?php echo $value['name'] ?>">
+									<input type="hidden" name="hinhsp" value="<?php echo $value['image'] ?>">
+									<input type="hidden" name="giasp" value="<?php echo $value['price'] ?>">
 								</div>
-								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-							</div>
-
-							<ul class="product-btns">
-								<li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
-								<li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
-							</ul>
-
-							<ul class="product-links">
-								<li>Category:</li>
-								<li><a href="#">Headphones</a></li>
-								<li><a href="#">Accessories</a></li>
-							</ul>
+							</form>
+							
 
 							<ul class="product-links">
 								<li>Share:</li>

@@ -1,22 +1,34 @@
-<?php   
-    // lay du lieu tu trong form gui len
-    $us = $_POST['username'];   // ten dang nhap ne
-    $pa = $_POST['password']; // mat khau ne
-    //ket noi den co so du lieu
-    $db = mysqli_connect("localhost","root","","nhom11_tatloi_tanminh");
+<?php
 
-    //truy van co so du lieu --- tim username va password
-    $sql = "SELECT * FROM USERS WHERE username = '$us'  AND password = '$pa'";
+  require "config/config.php";
+  require "models/db.php";
+  require "models/product.php";
+  require "models/manufacture.php";
+  require "models/users.php";
+  $user = new Users;
+  
+    $show = $user->getAllUser();
+    
+    $pass = Trim($_POST['password']);
+    $acc = Trim($_POST['username']);
 
-    //
-    $sr = mysqli_query($db, $sql);
-
-    if (mysqli_num_row($sr) > 0) {
-        echo "<h1>Dang nhap thanh cong </h1>";
-    }else
+    foreach($show as $value)
     {
-        echo "<h2>Dang nhap that bai hahaha </h2>";
+      if($acc == $value['username_users'] && $pass == $value['password_users'] && $value['loai'] == "admin" )
+        {
+          header("location: Admin/index.php");
+          break;
+        }
+        else
+        {
+          echo "Sai ten dang nhap hoac mat khau";
+          break;
+        }
+      
     }
+
+    
+  
 
 
 ?>

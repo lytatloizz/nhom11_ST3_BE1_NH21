@@ -72,6 +72,9 @@
                 $sum1 += $tt;
                 echo '<li>'.$_SESSION['cart'][$i][1].'</li>';
             }
+        }else
+        {
+           $sum1 = 0; 
         }
         echo 
         '<h4 style="text-align: center; color:blue">Tổng tiền đã thanh toán.</h4>
@@ -96,6 +99,7 @@
 <Br>
 <div style="text-align: right;">
     <a class="btn" data-toggle="modal" data-target="#exampleModalCenter" style="border: 1px solid black; background-color: aqua;border-radius: 5px;padding: 0.5%;">Thanh toán</a>
+    <a class="btn" data-toggle="modal" data-target="#exampleModalCenter1" style="border: 1px solid black; background-color: aqua;border-radius: 5px;padding: 0.5%;">Xem đơn hàng</a>
     <a style="border: 1px solid black;border-radius: 5px;padding: 0.6%; background-color: pink" href="add-cart.php?delcart=1">Xóa tất cả</a>
 </div>
 
@@ -110,9 +114,44 @@
         </button>
       </div>
       <div class="modal-body">
-        <h3 style="text-align: center; color: orangered;">Cám ơn bạn đã mua hàng ở shop</h3>
-        <strong>Sản Phẩm bạn mua là:</strong>
-        <?php show_products() ?>
+          <form action="#" method="post">
+            Tên: <input type="text" required name="name_kh">
+            Email: <input type="email" required name="email_kh"><br><br>
+            Số tài khoản: <input type="text" required name="stk_kh">
+            <br><br>
+            <div style="text-align: center;">
+            <input type="submit" class="btn btn-primary" name="submit1" id="" value="Đặt mua" required>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a class="btn" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter1" >Xem đơn hàng</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <?php
+            if(isset($_POST['submit1']))
+            {
+                echo 'Khách hàng tên: '.$_POST['name_kh'].'<br>';
+                echo 'Email khách hàng: '.$_POST['email_kh'].'<br>';
+                echo 'Số tài khoản: '.$_POST['stk_kh'].'<br>';             
+                echo '<h3 style="text-align: center; color: orangered;">Cám ơn bạn đã mua hàng ở shop</h3>
+                <strong>Sản Phẩm bạn mua là:</strong>';
+                show_products();
+            }
+           ?> 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -121,5 +160,4 @@
     </div>
   </div>
 </div>
-
 <?php include "footer.html" ?>

@@ -11,22 +11,27 @@
     
     $pass = Trim($_POST['password']);
     $acc = Trim($_POST['username']);
+    $login = 0;
 
     foreach($show as $value)
     {
-      if($acc == $value['username_users'] && $pass == $value['password_users'] && $value['loai'] == "admin" )
+      if($acc == $value['username_users'] && md5($pass) == $value['password_users'] && $value['role_users'] == "admin" )
         {
           header("location: Admin/index.php");
-          break;
+          $login = 1;
         }
-        else
-        {
-          echo "Sai ten dang nhap hoac mat khau";
-          break;
-        }
+      if($acc == $value['username_users'] && md5($pass) == $value['password_users'] && $value['role_users'] != "admin" )
+      {
+        echo "Đăng nhập thành công";
+        $login = 1;
+        break;
+      }
       
     }
-
+    if ($login = 0) {
+      echo "Sai tên đăng nhập hoặc mật khẩu";
+    }
+    
     
   
 

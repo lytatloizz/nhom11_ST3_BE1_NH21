@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Trang đăng ký</title>
+</head>
+
+<body>
+    <!-- CHỈ LÀ TRANG TRÍ----------------------------------------------------------------------------------->
+    <header>
+        <!-- TOP HEADER -->
+        <div id="top-header">
+            
+            <div class="container">
+                <div class="col-md-3">
+                    <div class="header-logo">
+                        <a href="index.php" class="logo">
+                            <img src="./img/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h2 style="color: white; text-align: center; padding-top: 2%;">Trung tâm tài khoản</h2>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+
+    
+<!-- /CHỈ LÀ TRANG TRÍ----------------------------------------------------------------------------------->
+    <div class="container" style="padding-top: 5%;">
+        <div class="col-12">
+            <h2 style="color: limegreen;">Đăng ký tài khoản mới</h2>
+
+            <form action="signup.php" method="post" role="form" name="signup-form">
+                <!-- Vertical -->
+                <div class="form-group">
+                    <label for="myEmail">Tên đăng nhập</label>
+                    <input type="text" id="username_input" class="form-control" placeholder="Tên đăng nhập"
+                        name="username" pattern="[a-zA-Z]{,20}" required>
+
+                    <h2></h2> <!-- cách ra cho dễ nhìn -->
+                    <label for="myPassword">Mật khẩu</label>
+                    <input type="password" id="password_input" class="form-control" placeholder="Mật khẩu cần tối thiểu 8 ký tự"
+                        name="password" pattern="[a-zA-Z0-9!@#$%^&*]{8,}" required>
+
+                    
+                    <h2></h2> <!-- cách ra cho dễ nhìn -->
+                    <label for="myName">Tên của bạn</label>
+                    <input type="text" id="password_input" class="form-control" placeholder="Tên đầy đủ" name="fullname"
+                        pattern="^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$"
+                        required>
+
+                    <h2></h2><!-- cách ra cho dễ nhìn  -->
+                    <label for="myEmail">Email</label>
+                    <input type="email" id="email_input" class="form-control" placeholder="Email của bạn" name="email"
+                        pattern="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
+                        required>
+
+
+                    <h2></h2><!-- cách ra cho dễ nhìn  -->
+                    <label for="myQuestion">Câu hỏi bảo mật</label>
+                    <input type="text" id="email_input" class="form-control"
+                        placeholder="Nhập bất cứ câu hỏi nào bạn nghĩ ra" name="quest"
+                        pattern="^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$"
+                        required>
+
+                    <h2></h2><!-- cách ra cho dễ nhìn  -->
+                    <label for="myAnswer">Câu trả lời bảo mật</label>
+                    <input type="text" id="email_input" class="form-control"
+                        placeholder="Nhập câu trả lời cho câu hỏi đó" name="ans">
+
+                    <h2></h2><!-- cách ra cho dễ nhìn  -->
+                    <button type="submit" class="btn btn-primary" name="submit">Đăng ký</button>
+                </div>
+            </form>
+
+
+            
+
+        </div>
+    </div>
+
+    <!-- KIỂM TRA FORM
+    <script>
+        function validateForm() {
+            var valid_name = document.forms["signup-form"]["fullname"].value;
+
+            var valid_account = document.forms["signup-form"]["username"].value;
+
+            var valid_email = document.forms["signup-form"]["email"].value;
+
+            var valid_question = document.forms["signup-form"]["quest"].value;
+
+            var valid_answer = document.forms["signup-form"]["ans"].value;
+
+            var regExp = /^[A-Za-z][\w$.]+@[\w]+\.\w+$/;
+            var email = document.getElementById("email_input").value;
+            // var validate = document.getElementById("validate").value;
+
+            if (valid_name == null || valid_name == "") {
+                alert("Bạn chưa điền tên của mình");
+                return false;
+            } else if (valid_account == null || valid_account == "") {
+                alert("Bạn chưa điền tên đăng nhập của mình");
+                return false;
+            } else if (valid_question == null || valid_question == "") {
+                alert("Bạn chưa điền câu hỏi bảo mật của mình");
+                return false;
+            } else if (valid_answer == null || valid_answer == "") {
+                alert("Bạn chưa điền tên câu trả lời bảo mật của mình");
+                return false;
+            }else if (regExp.test(email))
+                {}
+            else
+                alert('email không hợp lệ!');
+
+            
+            
+        }
+    </script>
+    -->
+
+    <!-- CHỈ LÀ TRANG TRÍ------------>
+    <!-- FOOTER ----------------------------------------------------------------------------------->
+    <footer id="footer">
+        <!-- top footer -->
+        <div class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">About Us</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut.</p>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Categories</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Hot deals</a></li>
+                                <li><a href="#">Laptops</a></li>
+                                <li><a href="#">Smartphones</a></li>
+                                <li><a href="#">Cameras</a></li>
+                                <li><a href="#">Accessories</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="clearfix visible-xs"></div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Information</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Orders and Returns</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Service</h3>
+                            <ul class="footer-links">
+                                <li><a href="account-center.html">My Account</a></li>
+                                <li><a href="#">View Cart</a></li>
+                                <li><a href="#">Wishlist</a></li>
+                                <li><a href="#">Track My Order</a></li>
+                                <li><a href="#">Help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /top footer -->
+
+        <!-- bottom footer -->
+        <div id="bottom-footer" class="section">
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ul class="footer-payments">
+                            <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                            <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                        </ul>
+                        <span class="copyright">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </span>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /bottom footer -->
+    </footer>
+    <!-- /FOOTER -->
+
+    <!-- jQuery Plugins -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

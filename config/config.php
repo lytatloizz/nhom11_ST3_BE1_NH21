@@ -1,6 +1,7 @@
 <?php
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'nhom11_tatloi_tanminh' );
+define( 'DB_NAME', 'nhom11' );
+/** define( 'DB_NAME', 'nhom11_tatloi_tanminh' ); */
 /** MySQL database username */
 define( 'DB_USER', 'root' );
 /** MySQL database password */

@@ -6,12 +6,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Manufacture</h1>
+            <h1>Users</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Manufacture</li>
+              <li class="breadcrumb-item active">Projects</li>
             </ol>
           </div>
         </div>
@@ -24,7 +24,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Manufacture</h3>
+          <h3 class="card-title">Users</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -45,26 +45,38 @@
                       <th >
                           name
                       </th>
-                      <th style="text-align: right;">
+                      <th>
+                          pass
+                      </th>
+                      <th>
+                          full name
+                      </th>
+                      <th>
+                          email	
+                      </th>
+                      <th class="text-center">
+                          type
+                      </th>
+                      <th style="text-align: center;">
                           Action
                       </th>
                   </tr>
               </thead>
               <tbody>
               <?php 
-                $getAllManu = $manufacture->getAllManu();
-                foreach($getAllManu as $value): 
+                $getAllUser = $user->getAllUser();
+                foreach($getAllUser as $value): 
               ?>
                   <tr>    
-                      <td> <?php echo $value['manu_id'] ?> </td>
-                      <td > <?php echo $value['manu_name'] ?> </td>
+                      <td> <?php echo $value['id_users'] ?> </td>
+                      <td > <?php echo $value['username_users'] ?> </td>
+                      <td> <input type="password" value="<?php echo $value['password_users']?>" readonly></td>
+                      <td class="project_progress"> <?php echo $value['fullname_users']  ?> </td>
+                      <td class="project_progress"> <?php echo $value['email_users'] ?> </td>
+                      <td class="project-state"> <?php echo $value['loai'] ?> </td>
                       <td class="project-actions text-right"> 
-                          <a class="btn btn-info btn-sm" href="manufacture-edit.php?id=<?php echo $value['manu_id'] ?>" >
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="manufacture-delete.php?manu_id=<?php echo $value['manu_id'] ?>">
+                         
+                          <a class="btn btn-danger btn-sm" href="users-delete.php?id=<?php echo $value['id_users'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

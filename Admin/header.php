@@ -4,9 +4,12 @@
     require "models/product.php";
     require "models/manufacture.php";
     require "models/protype.php";
+    require "models/users.php";
+
     $protypes = new Protype;
     $products = new Product;
     $manufacture = new Manufacture;
+    $user = new Users;
     $getAlltype = $protypes->getAllprotypes();
     $getAllmanu = $manufacture->getAllManu();
 ?>
@@ -200,7 +203,7 @@
           <img src="dist/img/66266676_177539209923002_6928281624295505920_n.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Lý Tất Lợi</a>
+          <a href="#" class="d-block"><?php echo $_SESSION['username'] ?></a>
         </div>
       </div>
 
@@ -302,6 +305,31 @@
                 <a href="protype-add.php" class="nav-link">
                 <i class="nav-icon fab fas fa-tape"></i>
                   <p>Protype add</p>
+                  <i class="fas fa-plus"></i>
+                </a>
+              </li>
+             
+            </ul>
+          </li>
+          <li class="nav-item menu-close">
+            <a href="#" class="nav-link ">
+            <i class="nav-icon fab fas fa-user"></i>
+              <p>
+                Users
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="users.php" class="nav-link active">
+                <i class="nav-icon fab fas fa-user"></i>
+                  <p>Show All Users</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="users-add.php" class="nav-link">
+                <i class="nav-icon fab fas fa-user"></i>
+                  <p>User add</p>
                   <i class="fas fa-plus"></i>
                 </a>
               </li>

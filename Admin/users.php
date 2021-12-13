@@ -73,7 +73,7 @@
                       <td> <input type="password" value="<?php echo $value['password_users']?>" readonly></td>
                       <td class="project_progress"> <?php echo $value['fullname_users']  ?> </td>
                       <td class="project_progress"> <?php echo $value['email_users'] ?> </td>
-                      <td class="project-state"> <?php echo $value['loai'] ?> </td>
+                      <td class="project-state"> <?php echo $value['role_users'] ?> </td>
                       <td class="project-actions text-right"> 
                          
                           <a class="btn btn-danger btn-sm" href="users-delete.php?id=<?php echo $value['id_users'] ?>">

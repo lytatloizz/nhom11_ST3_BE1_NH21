@@ -14,9 +14,9 @@ $getAllmanu = $manufacture->getAllManu();
         $id = trim($_POST['id']);
         $name = trim($_POST['name']);
         $price = (int) $_POST['price'];
-        if(isset($_FILES['Image']['name']))
+        if($_FILES['image']['name'] != null)
         {
-            $image =  $_FILES['Image']['name'];
+            $image =  $_FILES['image']['name'];
         }else
         {
             $image = $_POST['Image'];
@@ -26,15 +26,17 @@ $getAllmanu = $manufacture->getAllManu();
         $type_id = (int) $_POST['type_id'];
         $manu_id = (int) $_POST['manu_id'];
         $feature = (int) $_POST['feature'];
-        $products->editProducts($id,$name,$price,$manu_id,$type_id,$description,$image,$feature);
+
+        var_dump($image);
+       // $products->editProducts($id,$name,$price,$manu_id,$type_id,$description,$image,$feature);
         //upload_file
-        $target_dir = "../img/";
-        $target_file = $target_dir . basename($_FILES["Image"]["name"]);
-        move_uploaded_file($_FILES["Image"]["tmp_name"], $target_file);     
+       // $target_dir = "../img/";
+       // $target_file = $target_dir . basename($_FILES["Image"]["name"]);
+       // move_uploaded_file($_FILES["Image"]["tmp_name"], $target_file);     
     }else
     {
         echo 0;
     }
-header('location: products.php');
+//header('location: products.php');
                                   
 ?>

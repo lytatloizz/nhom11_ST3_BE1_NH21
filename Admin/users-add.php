@@ -35,7 +35,7 @@
           <div class="card-body">
               <div class="form-group">
                 <label for="inputName">User Name</label>
-                <input type="text" id="inputName" class="form-control" name="name">
+                <input type="text" id="inputName" class="form-control" name="username">
               </div>
               <div class="form-group">
                 <label for="inputClientCompany">User password</label>
@@ -43,15 +43,23 @@
               </div>
               <div class="form-group">
                 <label for="inputName">User full name</label>
-                <input type="text" id="inputName" class="form-control" name="full_name">
+                <input type="text" id="inputName" class="form-control" name="fullname">
               </div>
               <div class="form-group">
                 <label for="inputClientCompany">User Email</label>
                 <input type="text" id="email" class="form-control" name="email">
               </div>
               <div class="form-group">
-                <label for="inputProjectLeader">User type</label>
-                <input type="text" id="type" class="form-control" name="type">
+              <label for="myQuestion">Câu hỏi bảo mật</label>
+                <input type="text" id="email_input" class="form-control"
+                placeholder="Nhập bất cứ câu hỏi nào bạn nghĩ ra" name="quest"
+                pattern="^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$"
+                required>
+              </div>
+              <div class="form-group">
+              <label for="myAnswer">Câu trả lời bảo mật</label>
+                <input type="text" id="email_input" class="form-control"
+                placeholder="Nhập câu trả lời cho câu hỏi đó" name="ans">
               </div>
           </div>
             <!-- /.card-body -->

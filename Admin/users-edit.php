@@ -63,7 +63,7 @@
               </div>
               <div class="form-group">
                 <label for="inputClientCompany">User Type</label>
-                <input type="text" id="inputName" class="form-control" value="<?php echo $value['loai'] ?>" name="type">
+                <input type="text" id="inputName" class="form-control" value="<?php echo $value['role_users'] ?>" name="type">
               </div>
             </div>
             </div>

@@ -37,6 +37,7 @@ $getAllmanu = $manu->getAllManu();
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 		<!-- Custom stlylesheet -->
 
+
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -58,11 +59,7 @@ $getAllmanu = $manu->getAllManu();
 					</ul>
 					<ul class="header-links pull-right">
 						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-<<<<<<< HEAD
-						<li><a href="login/login.html"><i class="fa fa-user-o"></i> My Account</a></li>
-=======
 						<li><a href="account-center.html"><i class="fa fa-user-o"></i> My Account</a></li>
->>>>>>> minh-branch
 					</ul>
 				</div>
 			</div>

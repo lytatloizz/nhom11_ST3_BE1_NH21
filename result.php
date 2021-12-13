@@ -219,7 +219,7 @@
 							<?php 
 							if(isset($_GET['submit'])):
 								$keyword = $_GET['keyword'];
-								$perPage = 3;
+								$perPage = 3; 
 									if(isset($_GET['page']))
 									{
 										$page = $_GET['page'];
@@ -228,7 +228,7 @@
 										$page = 1;
 									}
 									
-									$url = $_SERVER['PHP_SELF']."?keyword=".$_GET['keyword']."&submit=";
+								$url = $_SERVER['PHP_SELF']."?keyword=".$_GET['keyword']."&submit=";
 								$Search = $product->Search1($keyword,$page, $perPage);
 								$total = count($Search);
 								foreach($Search as $value):
@@ -277,8 +277,7 @@
 						<div class="store-filter clearfix">
 							<span class="store-qty"></span>
 							<ul class="store-pagination">
-								<?php echo $product->paginate($url, $total, $perPage); ?>
-								
+								<?php echo $product->paginate($url, $total, $page, $perPage); ?>
 							</ul>
 						</div>
 						<!-- /store bottom filter -->

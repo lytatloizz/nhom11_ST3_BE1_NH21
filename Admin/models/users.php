@@ -38,5 +38,13 @@ class Users extends Db{
         $sql->bind_param("sssss", $name,$pass,$full_name,$email,$type);
         return $sql->execute();
     }
-
+    public function signup($acc,$pass,$fullname,$email,$role,$quest,$ans)
+    {
+        $sql = self::$connection->prepare("INSERT INTO users (`username_users`, `password_users`, `fullname_users`, `email_users`, `role_users`, `question_users`, `answer_users`) VALUES (?,?,?,?,?,?,?)");
+        $pass = md5($pass);
+        $ans = md5($ans);
+        $sql->bind_param("sssssss", $acc,$pass,$fullname,$email,$role,$quest,$ans);
+        return $sql->execute(); //run SQl
+        
+    }
 }

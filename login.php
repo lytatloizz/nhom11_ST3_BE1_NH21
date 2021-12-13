@@ -14,7 +14,7 @@
 
     foreach($show as $value)
     {
-      if($acc == $value['username_users'] && md5($pass) == $value['password_users'] && $value['loai'] == "admin" )
+      if($acc == $value['username_users'] && md5($pass) == $value['password_users'] && $value['role_users'] == "admin" )
         {
           $_SESSION['username'] = $acc;
           header("location: Admin/index.php");

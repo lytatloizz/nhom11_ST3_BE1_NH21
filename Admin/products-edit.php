@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Project Edit</h1>
+            <h1>Products Edit</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -21,8 +21,8 @@
 
     <!-- Main content -->
     <section class="content">
-    <form action="upload_file_edit.php" method="post" enctype="multipart/form-data">
-      <div class="row">
+    <form action="upload_file_edit.php" method="post" enctype="multipart/form-data" name="edit">
+      <div class="row" style="display: flex;">
         <div class="col-md-6">
           <div class="card card-primary">
             <div class="card-header">
@@ -48,7 +48,9 @@
               <div class="form-group">
                 <label for="inputStatus">Products Image</label>
                 <div class="custom-file-upload">
-                  <input type="text" id="img" class="form-control" value="<?php echo $value['image'] ?>" name="Image">
+                  <input type="file" id="img" class="form-control" name="image">
+                  <input type="hidden" value="<?php echo $value['image'] ?>" name="Image">
+                  <img style="width: 100px;" src="../img/<?php echo $value['image'] ?>"  class="img-chage" alt="">
                 </div>
               </div>
               <div class="form-group">
@@ -56,16 +58,15 @@
                 <textarea id="inputDescription" class="form-control" rows="4" name="description"><?php echo $value['description'] ?></textarea>
               </div>
             </div>
+            
             </div>
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
-        </div>
-        <div class="col-md-6">
+          <div class="col-md-6">
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">General</h3>
-
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                   <i class="fas fa-minus"></i>
@@ -122,8 +123,18 @@
               <div class="form-group">
                 <label for="inputClientCompany">Products feature</label>
                 <select id="inputmanufactures" class="form-control custom-select" name="feature">
-                  <option value="1">Nổi Bật</option>
-                  <option value="0">Không Nổi Bật</option>
+                  
+                  <?php 
+                    if($value['feature'] == 1)
+                    {
+                      echo '<option value="1">Nổi Bật</option>
+                            <option value="0">Không Nổi Bật</option>';
+                    }else
+                    {
+                      echo '<option value="0">Không Nổi Bật</option>
+                            <option value="1">Nổi Bật</option>';
+                    }
+                  ?>
               </select>
               </div>
             </div>
@@ -131,6 +142,8 @@
           </div>
           <!-- /.card -->
         </div>
+        </div>
+        
       </div>
       <?php endforeach ?>
       <div class="row">
@@ -143,5 +156,24 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+<script>
+  let image = document.getElementById("img");
+  let btnImg = document.querySelector('.file-upload-button');
+  let img_chage = document.querySelector('.img-chage');
+  let fileName = document.getElementById("img");
 
+  //img_chage.src = "../img/" + btnImg.getAttribute("title");
+  let x = () =>
+  {
+    //alert(input.value.substring(12,));
+    //setInterval(img_chage.src = "../img/" + input.value.substring(12,),3000);
+    
+    img_chage.src = "../img/" + fileName.value.substring(12,);
+    //img_chage.setAttribute("src","../img/" + input.value.substring(12,));
+  }
+  image.onclick = () =>
+  {
+    setInterval(x,1000);
+  }
+</script>
   <?php include "footer.html" ?>

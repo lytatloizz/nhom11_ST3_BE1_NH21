@@ -95,6 +95,16 @@ class Product extends Db
             }
             return $link;
     }
+    function paginate1($url, $total, $perPage)
+    {
+    $totalLinks = ceil($total/$perPage);
+        $link ="";
+            for($j=1; $j <= $totalLinks ; $j++)
+            {
+                $link = $link."<li><a href='$url&page=$j'> $j </a></li>";
+            }
+            return $link;
+    }
     public function Search1($keyword,$page, $perPage)
     {
         $sql = self::$connection->prepare("SELECT * FROM products WHERE `name` LIKE ? LIMIT ?, ?");

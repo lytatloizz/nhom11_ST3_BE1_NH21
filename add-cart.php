@@ -47,7 +47,7 @@
                 echo '<tr style="text-align: center;">
                         <td>'.($i+1).'</td>
                         <td>'.$_SESSION['cart'][$i][0].'</td>
-                        <td>'.$_SESSION['cart'][$i][1].'</td>
+                        <td><a href="detail.php?id='.$_SESSION['cart'][$i][0].'">'.$_SESSION['cart'][$i][1].'</td>
                         <td><img src="./img/'.$_SESSION['cart'][$i][2].'" alt="" style="width:100px"></td>
                         <td>'.$_SESSION['cart'][$i][4].'</td>
                         <td>'.$_SESSION['cart'][$i][3].'</td>

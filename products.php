@@ -251,7 +251,8 @@
 									$url = $_SERVER['PHP_SELF']."?manu_id=".$_GET['manu_id'];
 
 									$getProductByManuId = $product->get3ProductByManuId($manu_id, $page, $perPage);
-									$total = count($getProductByManuId);
+									$getProductByManuIdTotal = $product->getProductByManuId($manu_id);
+									$total = count($getProductByManuIdTotal);
 									foreach($getProductByManuId as $value):
 							?>
 							<!-- product -->
@@ -292,7 +293,7 @@
 						<div class="store-filter clearfix">
 							<span class="store-qty">Showing 20-100 products</span>
 							<ul class="store-pagination">
-									<?php echo $product->paginate($url, $total, $page, $perPage); ?>
+									<?php echo $product->paginate($url, $total, $perPage); ?>
 							</ul>
 						</div>
 						<!-- /store bottom filter -->

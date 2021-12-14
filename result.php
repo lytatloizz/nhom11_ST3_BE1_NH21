@@ -229,9 +229,11 @@
 									}
 									
 								$url = $_SERVER['PHP_SELF']."?keyword=".$_GET['keyword']."&submit=";
-								$Search = $product->Search1($keyword,$page, $perPage);
-								$total = count($Search);
-								foreach($Search as $value):
+								$Search1 = $product->Search1($keyword,$page, $perPage);
+								$searchtotal = $product->Search($keyword);
+								$total = count($searchtotal);
+								
+								foreach($Search1 as $value):
 							?>
 								<!-- product -->
 								<div class="col-md-4 col-xs-6">
@@ -277,7 +279,7 @@
 						<div class="store-filter clearfix">
 							<span class="store-qty"></span>
 							<ul class="store-pagination">
-								<?php echo $product->paginate($url, $total, $page, $perPage); ?>
+								<?php echo $product->paginate($url, $total, $perPage); ?>
 							</ul>
 						</div>
 						<!-- /store bottom filter -->

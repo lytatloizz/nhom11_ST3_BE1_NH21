@@ -3,7 +3,7 @@ class Product extends Db
 {
     public function getAllProducts()
     {
-        $sql = self::$connection->prepare("SELECT * FROM products");
+        $sql = self::$connection->prepare("SELECT * FROM products LIMIT 5");
         $sql->execute(); //return an object
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -11,7 +11,7 @@ class Product extends Db
     }
     public function getRamdomProducts()
     {
-        $sql = self::$connection->prepare("SELECT * FROM products ORDER BY RAND()");
+        $sql = self::$connection->prepare("SELECT * FROM products ORDER BY RAND() LIMIT 5");
         $sql->execute(); //return an object
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);

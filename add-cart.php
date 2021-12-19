@@ -1,4 +1,4 @@
-<?php session_start(); include "header.php" ?>
+<?php  include "header.php" ?>
 <?php 
     if(!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
 
@@ -60,6 +60,7 @@
                     <th style="text-align: center" colspan="7">Tổng đơn hàng</th>
                     <th style="text-align: center;">'.number_format($sum).' VND</th>
                 </tr>';
+          $_SESSION['sum'] = $sum;
         }
     }
     function show_products()

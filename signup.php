@@ -31,7 +31,8 @@
         if($acc != $value['username_users'] )
         {
             $user->signup($acc,$pass,$fullname,$email,$role,$quest,$ans);
-            echo "Đăng ký thành công";
+            echo "Đăng ký thành công. <br>";
+            echo '<a href="account-center.html"> nhấn vào đây để tới trang đăng nhập.';
             break;
         }
         else {

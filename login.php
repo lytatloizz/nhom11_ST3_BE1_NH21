@@ -15,11 +15,16 @@
     foreach($show as $value)
     {
       if($acc == $value['username_users'] && md5($pass) == $value['password_users'] && $value['role_users'] == "admin" )
-        {
-          $_SESSION['username'] = $acc;
-          header("location: Admin/index.php");
-          break;
-        }
+      {
+        $_SESSION['username'] = $acc;
+        header("location: Admin/index.php");
+        break;
+      }elseif($acc == $value['username_users'] && md5($pass) == $value['password_users'] && $value['role_users'] == "normal" )
+      {
+        $_SESSION['client'] = $acc;
+        header("location: index.php");
+        break;
+      }
     }
     echo "Sai ten dang nhap hoac mat khau";
 

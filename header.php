@@ -1,9 +1,10 @@
 <?php
-
+session_start();
 require "config/config.php";
 require "models/db.php";
 require "models/product.php";
 require "models/manufacture.php";
+require "models/users.php";
 $manu = new Manufacture;
 $product = new Product;
 $getAllProducts = $product->getAllProducts();
@@ -58,7 +59,7 @@ $getAllmanu = $manu->getAllManu();
 						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
+						<li><a href="user.php"><i class="fa fa-user"></i>User</a></li>
 						<li><a href="account-center.html"><i class="fa fa-user-o"></i> My Account</a></li>
 					</ul>
 				</div>
@@ -108,11 +109,64 @@ $getAllmanu = $manu->getAllManu();
 								<div class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 										<i class="fa fa-shopping-cart"></i>
-										<a href="add-cart.php"><span>Your Cart</span></a>
+										<span>Your Cart</span>
+										<div class="qty">
+											<?php 
+											if(isset($_SESSION['cart']))
+										 		echo sizeof($_SESSION['cart']);
+											else
+											 echo 0;
+											 ?>
+										 </div>
 									</a>
+									<div class="cart-dropdown">
+										
+										<?php if(isset($_SESSION['cart'])): for ($i=0; $i < sizeof($_SESSION['cart']); $i++):  ?>
+										<div class="cart">
+											<div class="product-widget">
+												<?php
+													echo '<div class="product-img">
+															<img src="./img/'.$_SESSION['cart'][$i][2].'" alt="">
+														</div>
+														<div class="product-body">
+															<h3 class="product-name"><a href="#">'. $_SESSION['cart'][$i][1] .'</a></h3>
+															<h4 class="product-price"><span class="qty">1x</span>'. $_SESSION['cart'][$i][3].'</h4>
+														</div>';
+												?>
+											</div>
+										</div>
+										<?php endfor; endif ?>
+										<div class="cart-summary">
+											<small><?php
+											if(isset($_SESSION['cart']))
+											{
+												echo sizeof($_SESSION['cart']);
+											}else
+											{
+												echo 0;
+											}
+											 
+											 ?> Item(s) selected</small>
+											<h5>SUBTOTAL: <?php 
+											if(isset($_SESSION['cart']))
+											{
+												echo number_format( $_SESSION['sum']);
+											}else
+											{
+												echo 0;
+											}
+											
+											 ?>VND</h5>
+										</div>
+										<div class="cart-btns">
+											<a href="add-cart.php">View Cart</a>
+											<a href="add-cart.php">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+										</div>
+										
+									</div>
 								</div>
-								<!-- /Cart -->
-
+								<!-- /Cart -->	
+								
 								<!-- Menu Toogle -->
 								<div class="menu-toggle">
 									<a href="#">
@@ -156,4 +210,4 @@ $getAllmanu = $manu->getAllManu();
 		</nav>
 		<!-- /NAVIGATION -->
 
->
+

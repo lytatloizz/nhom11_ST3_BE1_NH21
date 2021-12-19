@@ -54,7 +54,14 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+											<form action="add-cart.php" method="post">
+												<input type="submit" name="submit" class="add-to-cart-btn" value="add to cart">
+												<input type="hidden" name="idsp" value="<?php echo $value['id'] ?>">
+												<input type="hidden" name="tensp" value="<?php echo $value['name'] ?>">
+												<input type="hidden" name="hinhsp" value="<?php echo $value['image'] ?>">
+												<input type="hidden" name="giasp" value="<?php echo $value['price'] ?>">
+												<input type="hidden" value="1" name="soluong">
+											</form>
 											</div>
 										</div>
 										<!-- /product -->
@@ -126,8 +133,14 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
+											<form action="add-cart.php" method="post">
+												<input type="submit" name="submit" class="add-to-cart-btn" value="add to cart">
+												<input type="hidden" name="idsp" value="<?php echo $value['id'] ?>">
+												<input type="hidden" name="tensp" value="<?php echo $value['name'] ?>">
+												<input type="hidden" name="hinhsp" value="<?php echo $value['image'] ?>">
+												<input type="hidden" name="giasp" value="<?php echo $value['price'] ?>">
+												<input type="hidden" value="1" name="soluong">
+											</form>											</div>
 										</div>
 										<!-- /product -->
 										<?php endforeach ?>
@@ -198,8 +211,14 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-											</div>
+											<form action="add-cart.php" method="post">
+												<input type="submit" name="submit" class="add-to-cart-btn" value="add to cart">
+												<input type="hidden" name="idsp" value="<?php echo $value['id'] ?>">
+												<input type="hidden" name="tensp" value="<?php echo $value['name'] ?>">
+												<input type="hidden" name="hinhsp" value="<?php echo $value['image'] ?>">
+												<input type="hidden" name="giasp" value="<?php echo $value['price'] ?>">
+												<input type="hidden" value="1" name="soluong">
+											</form>											</div>
 										</div>
 										<!-- /product -->
 										<?php endforeach ?>

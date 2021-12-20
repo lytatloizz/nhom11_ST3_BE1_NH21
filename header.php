@@ -59,6 +59,7 @@ $getAllmanu = $manu->getAllManu();
 						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
 					</ul>
 					<ul class="header-links pull-right">
+						<li><a href="bill.php"><i class="fas fa-wallet"></i>Bill</a></li>
 						<li><a href="user.php"><i class="fa fa-user"></i>User</a></li>
 						<li><a href="account-center.html"><i class="fa fa-user-o"></i> My Account</a></li>
 					</ul>

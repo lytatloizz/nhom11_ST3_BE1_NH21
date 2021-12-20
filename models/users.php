@@ -32,9 +32,9 @@ class Users extends Db{
 
     public function resetPassword($newpass, $acc)
     {
-        $sql = self::$connection->prepare("UPDATE users SET password_users = $newpass WHERE username_users = $acc");
+        $sql = self::$connection->prepare("UPDATE users SET password_users = ? WHERE username_users = ?");
         $newpass = md5($newpass);
-        $sql->bind_param("ss",$newpass, $acc );
+        $sql->bind_param("ss",$newpass, $acc);
         return $sql->execute(); //run SQl
     }
     

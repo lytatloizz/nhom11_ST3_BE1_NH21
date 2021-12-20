@@ -11,32 +11,47 @@
     $message = "Không tìm thấy tài khoản mà bạn yêu cầu, hãy kiểm tra lại";
     $show = $user->getAllUser();
     
-    
+    $flag = 0;
+    $flag1 = 0;
+    $check = 0;
     $acc = Trim($_POST['username']);
     $quest = Trim($_POST['question']);
     $ans = Trim($_POST['answer']);
     $newpass = Trim($_POST['newpass']);
     foreach($show as $value)
     {
-      if($acc == $value['username_users'] && $quest == $value['question_users'] && md5($ans) == $value['answer_users'])
+        if($quest != $value['question_users'] || md5($ans) != $value['answer_users'])
+        {
+          $check = 1;
+        }
+        if($acc == $value['username_users'] && $quest == $value['question_users'] && md5($ans) == $value['answer_users'])
         {
             $user->resetPassword($newpass,$acc);
-            echo "Mật khẩu của bạn đã được đặt lại thành công";
-            
+            echo "Mật khẩu của bạn đã được đặt lại thành công.<br>";
+            echo '<a href="account-center.html">Nhấn vào đây để về trang login.</a>';
+            $flag = 0;
             break;
-        }
-        if($acc == $value['username_users'] && $quest != $value['question_users'] && md5($ans) != $value['answer_users'])
+        }if($acc == $value['username_users'] && $check == 1)
         {
-            echo "Hãy kiểm tra lại câu hỏi bảo mật hoặc câu trả lời bảo mật";
+            $flag = 1;
             break;
+        }else
+        {
+          $flag = 2;
         }
-        else {
-            echo "<script type='text/javascript'>alert('$message');</script>";
-            break;
-        }
-      
+        
     }
-
+      
+    if($flag == 1)
+    {
+      echo "Hãy kiểm tra lại câu hỏi bảo mật hoặc câu trả lời bảo mật<br>";
+      echo '<a href="forgot-password.html">nhấn vào để trở lại</a>';
+    }if($flag == 2)
+    {
+       echo "<script type='text/javascript'>alert('$message');</script>";
+       echo '<a href="forgot-password.html">nhấn vào để trở lại</a>';
+    }
+     
     
     
     /*

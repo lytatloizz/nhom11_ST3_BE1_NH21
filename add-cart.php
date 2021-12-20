@@ -99,11 +99,11 @@
 </table>
 <Br>
 <div style="text-align: right;">
-    <a class="btn" data-toggle="modal" data-target="#exampleModalCenter" style="border: 1px solid black; background-color: aqua;border-radius: 5px;padding: 0.5%;">Thanh toán</a>
-    <a class="btn" data-toggle="modal" data-target="#exampleModalCenter1" style="border: 1px solid black; background-color: aqua;border-radius: 5px;padding: 0.5%;">Xem đơn hàng</a>
-    <a style="border: 1px solid black;border-radius: 5px;padding: 0.6%; background-color: pink" href="add-cart.php?delcart=1">Xóa tất cả</a>
+    <a class="btn" href="bill-add.php" style="border: 1px solid black; background-color: aqua;border-radius: 5px;padding: 0.5%;">Thanh toán</a>
+    <a class="btn" href="bill.php" style="border: 1px solid black; background-color: aqua;border-radius: 5px;padding: 0.5%;">Xem đơn hàng</a>
+    <a style="border: 1px solid black;border-radius: 5px;padding: 0.6%; background-color: pink" href="add-cart.php?delcart=1">Xóa tất cả</a><br><br>
+    <a data-toggle="modal" data-target="#exampleModalCenter" style="border: 1px solid black; background-color: violet;border-radius: 5px;padding: 0.5%;">Thanh toán(không đăng nhâp).</a>
 </div>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -118,16 +118,15 @@
           <form action="#" method="post">
             Tên: <input type="text" required name="name_kh">
             Email: <input type="email" required name="email_kh"><br><br>
-            Số tài khoản: <input type="text" required name="stk_kh">
             <br><br>
             <div style="text-align: center;">
-            <input type="submit" class="btn btn-primary" name="submit1" id="" value="Đặt mua" required>
+              <input type="submit" class="btn btn-primary" name="submit1" id="" value="Đặt mua" required>
+              <button data-toggle="modal" data-target="#exampleModalCenter1" type="button" class="btn btn-secondary" data-dismiss="modal">Xem thông tin.</button>
             </div>
           </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a class="btn" data-toggle="modal" data-dismiss="modal" data-target="#exampleModalCenter1" >Xem đơn hàng</a>
       </div>
     </div>
   </div>
@@ -146,8 +145,7 @@
             if(isset($_POST['submit1']))
             {
                 echo 'Khách hàng tên: '.$_POST['name_kh'].'<br>';
-                echo 'Email khách hàng: '.$_POST['email_kh'].'<br>';
-                echo 'Số tài khoản: '.$_POST['stk_kh'].'<br>';             
+                echo 'Email khách hàng: '.$_POST['email_kh'].'<br>';          
                 echo '<h3 style="text-align: center; color: orangered;">Cám ơn bạn đã mua hàng ở shop</h3>
                 <strong>Sản Phẩm bạn mua là:</strong>';
                 show_products();
@@ -161,4 +159,5 @@
     </div>
   </div>
 </div>
+
 <?php include "footer.html" ?>
